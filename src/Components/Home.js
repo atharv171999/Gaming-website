@@ -3,6 +3,7 @@ import "../App.css";
 import Banner from "../Images/hero-banner.jpg";
 import "../Fonts/REFAULT.woff";
 import "../index.css";
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 // import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 
 const Home = () => {
@@ -30,9 +31,9 @@ const Home = () => {
           STEAM
         </h1>
         <div className=" flex flex-col items-center font-bold text-white text-xl  sm:flex-row  sm:justify-center">
-          <button className="btn focus:bg-[#1f2029] focus:text-white bg-[#ff8605] px-[34px] py-[13px] ">
+          <button className="btn focus:bg-[#1f2029] focus:text-white bg-[#ff8605] items-center   px-[34px] py-[13px] ">
             WATCH LIVE 
-            <img className="" src="" alt="" />
+            <PlayCircleIcon className="ml-2 mb-1"/>
           </button>
           <button className=" focus:text-[#ff8605] w-[13rem] py-[0.8rem]">DREAM MAKING</button>
         </div>

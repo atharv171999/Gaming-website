@@ -121,10 +121,24 @@
   transition: var(--transition-3);
 }
 
+.trans-form{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 1000px;
+  background-color: #1b1c22;
+  transform: translateX(0%);
+  transition: 0.5s ease-in-out;
+}
+
+.trans-form:focus{
+  transform: translateX(0%);
+
+}
+
 @media screen and (min-width: 768px) {
   .input {
-    border: 2px solid #222;
-    x-webkit-clip-path: polygon(96% 0, 100% 36%, 100% 100%, 4% 100%, 0 66%, 0 0);
     clip-path: polygon(96% 0, 100% 36%, 100% 100%, 4% 100%, 0 66%, 0 0);
   }
 }
@@ -132,4 +146,8 @@
 .active-sc {
   overflow-y: hidden;
   background-color: hsla(0, 0%, 0%, 0.7);
+}
+
+.twitter, .instagram, .github, .youtube {
+  color: #ff8605;
 }

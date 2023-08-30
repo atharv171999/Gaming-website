@@ -5,6 +5,7 @@ import Mcharac from "../Images/about-img.png";
 import Charac1 from "../Images/character-1.png";
 import Charac2 from "../Images/character-2.png";
 import Charac3 from "../Images/character-3.png";
+import { ArrowForwardCircleOutline } from 'react-ionicons'
 
 const About = () => {
   return (
@@ -30,10 +31,10 @@ const About = () => {
           <img className="absolute -top-1 -right-[7.3rem] hidden md:block w-[130px]" src={Charac3} alt="" />
             </figure>
           <div className=" sm:w-[34rem] md:w-[42rem] xl:h-[24rem] xl:w-[37rem] space-y-4 px-3 py-10 text-left sm:mx-auto sm:px-[2.5rem] sm:py-[4rem] xl: xl:ml-3 bg-[#1f2029]">
-            <p className=" text-[#ff8605] -tracking-[1px] font-bold">
+            <p className="font-[oswald] text-[#ff8605] -tracking-[1px] font-bold">
               FIND TEAM MEMBER
             </p>
-            <h2 className=" -tracking-[3px] font-bold text-4xl sm:text-5xl  text-white">
+            <h2 className="font-[oswald] -tracking-[3px] font-bold text-4xl sm:text-5xl  text-white">
               EXPERIENCE JUST FOR GAMERS{" "}
               <span className="text-[#ff8605]">OFFER</span>
             </h2>
@@ -43,7 +44,12 @@ const About = () => {
               auctor lobortis lacus. Phasellus gravida semper nisi. Aliquam
               lobortis.
             </p>
-            <p className=" text-white">Will sharpen your brain and focus</p>
+            <p className=" text-white flex flex-row items-center gap-x-2"> <ArrowForwardCircleOutline
+  color={'#ff8605'} 
+  title={""}
+  height="30px"
+  width="30px"
+/> Will sharpen your brain and focus</p>
           </div>
         </div>
           

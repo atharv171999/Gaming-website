@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 import Logo from "../Images/gamex.svg";
-import { SearchOutline, LogInOutline } from "react-ionicons";
-import FacebookIcon from "@mui/icons-material/Facebook";
+import { SearchOutline, LogInOutline, CloseOutline, Home } from "react-ionicons";
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+
+
+
 const Navbar = (open) => {
   const [isActive, setIsActive] = useState(false);
 
@@ -68,6 +74,31 @@ const Navbar = (open) => {
     });
   };
 
+  const sideAbout = () => {
+    window.scrollTo({
+      top: 900,
+      behavior: "smooth",
+    });
+  };
+  const sideTournament = () => {
+    window.scrollTo({
+      top: 1900,
+      behavior: "smooth",
+    });
+  };
+  const sideTeams = () => {
+    window.scrollTo({
+      top: 3550,
+      behavior: "smooth",
+    });
+  };
+  const sideGears = () => {
+    window.scrollTo({
+      top: 4500,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       <div className=" sticky z-20 top-0 drop-shadow-2xl h-24 flex justify-between px-4 bg-[#1f2029] md:hidden ">
@@ -114,35 +145,35 @@ const Navbar = (open) => {
           <div className="  font-bold text-sm  flex justify-center  h-full text-white ">
             <div
               onClick={goHome}
-              className=" hover:-skew-x-12 px-6 py-9 xl:py-12 hover:border-b-[7px] border-[#ff8605] hover:bg-[#1b1c22] hover:text-[#ff8605]  "
+              className=" font-[oswald] hover:-skew-x-12 px-6 py-9 xl:py-12 hover:border-b-[7px] border-[#ff8605] hover:bg-[#1b1c22] hover:text-[#ff8605]  "
             >
               HOME
             </div>
             <div
               onClick={goAbout}
-              className=" hover:-skew-x-12 px-6 py-9 xl:py-12 hover:border-b-[7px] border-[#ff8605] hover:bg-[#1b1c22] hover:text-[#ff8605] "
+              className=" font-[oswald] hover:-skew-x-12 px-6 py-9 xl:py-12 hover:border-b-[7px] border-[#ff8605] hover:bg-[#1b1c22] hover:text-[#ff8605] "
             >
               ABOUT
             </div>
             <div
               onClick={goTournament}
-              className=" hover:-skew-x-12 px-6 py-9 xl:py-12 hover:border-b-[7px] border-[#ff8605] hover:bg-[#1b1c22] hover:text-[#ff8605]  "
+              className=" font-[oswald] hover:-skew-x-12 px-6 py-9 xl:py-12 hover:border-b-[7px] border-[#ff8605] hover:bg-[#1b1c22] hover:text-[#ff8605]  "
             >
               TOURNAMENT
             </div>
             <div
               onClick={goTeams}
-              className=" hover:-skew-x-12 px-6 py-9 xl:py-12 hover:border-b-[7px] border-[#ff8605] hover:bg-[#1b1c22] hover:text-[#ff8605] "
+              className=" font-[oswald] hover:-skew-x-12 px-6 py-9 xl:py-12 hover:border-b-[7px] border-[#ff8605] hover:bg-[#1b1c22] hover:text-[#ff8605] "
             >
               TEAM
             </div>
             <div
               onClick={goGears}
-              className=" hover:-skew-x-12 px-6 py-9 xl:py-12 hover:border-b-[7px] border-[#ff8605] hover:bg-[#1b1c22] hover:text-[#ff8605]  "
+              className=" font-[oswald] hover:-skew-x-12 px-6 py-9 xl:py-12 hover:border-b-[7px] border-[#ff8605] hover:bg-[#1b1c22] hover:text-[#ff8605]  "
             >
               GEARS
             </div>
-            <div className=" hover:-skew-x-12 px-6 py-9 xl:py-12 hover:border-b-[7px] border-[#ff8605] hover:bg-[#1b1c22] hover:text-[#ff8605] ">
+            <div className=" font-[oswald] hover:-skew-x-12 px-6 py-9 xl:py-12 hover:border-b-[7px] border-[#ff8605] hover:bg-[#1b1c22] hover:text-[#ff8605] ">
               CONTACT
             </div>
           </div>
@@ -169,7 +200,7 @@ const Navbar = (open) => {
                       width="80%"
                     />
                   </div>
-                  <span>LOG-IN</span>
+                  <span className="font-[oswald]" >LOG-IN</span>
                 </div>
               </div>
               <div className=" w-1 h-full bg-[#ff8605]"></div>
@@ -183,7 +214,7 @@ const Navbar = (open) => {
       </div>
       {/* <============== Sidebar ===================> */}
       <section
-        className={` bg-[#1b1c22] w-[300px] h-[1000px] z-20 absolute top-0 right-0 ${
+        className={`lg:hidden trans-form bg-[#1b1c22] z-20  ${
           isActive ? "block" : "hidden"
         }`}
       >
@@ -191,46 +222,57 @@ const Navbar = (open) => {
           <a href="/">
             <img src={Logo} alt="" />
           </a>
-          <button onClick={closeBar} className=" p-[10px] text-[25px] ">
-            X
+          <button onClick={closeBar} className=" text-[25px] w-[40px] h-[40px] ">
+          <CloseOutline
+  color={'#ffffff'} 
+  title={""}
+  height="100%"
+  width="100%"
+/>
           </button>
         </div>
         <ul>
-          <li className=" text-white font-bold text-[15px] border-b-2 border-[#ffffff1a] px-[25px] py-[10px] ">
+          <li onClick={goHome} className=" focus:text-[#ff8605] text-white font-bold text-[15px] border-b-2 border-[#ffffff1a] px-[25px] py-[10px] ">
             HOME
           </li>
-          <li className=" text-white font-bold text-[15px] border-b-2 border-[#ffffff1a] px-[25px] py-[10px] ">
-            TOURNAMENT
-          </li>
-          <li className=" text-white font-bold text-[15px] border-b-2 border-[#ffffff1a] px-[25px] py-[10px] ">
+          <li onClick={sideAbout} className=" focus:text-[#ff8605] text-white font-bold text-[15px] border-b-2 border-[#ffffff1a] px-[25px] py-[10px] ">
             ABOUT
           </li>
-          <li className=" text-white font-bold text-[15px] border-b-2 border-[#ffffff1a] px-[25px] py-[10px] ">
-            TEAMS
+          <li onClick={sideTournament} className=" focus:text-[#ff8605] text-white font-bold text-[15px] border-b-2 border-[#ffffff1a] px-[25px] py-[10px] ">
+          TOURNAMENT
           </li>
-          <li className=" text-white font-bold text-[15px] border-b-2 border-[#ffffff1a] px-[25px] py-[10px] ">
+          <li onClick={sideTeams} className=" focus:text-[#ff8605] text-white font-bold text-[15px] border-b-2 border-[#ffffff1a] px-[25px] py-[10px] ">
+            TEAMS   
+          </li>
+          <li onClick={sideGears} className=" focus:text-[#ff8605] text-white font-bold text-[15px] border-b-2 border-[#ffffff1a] px-[25px] py-[10px] ">
             GEARS
           </li>
-          <li className=" text-white font-bold text-[15px] border-b-2 border-[#ffffff1a] px-[25px] py-[10px] ">
+          <li className=" focus:text-[#ff8605] text-white font-bold text-[15px] border-b-2 border-[#ffffff1a] px-[25px] py-[10px] ">
             CONTACT
           </li>
         </ul>
         <ul className="  flex flex-row justify-center gap-x-4 p-[25px]">
           <li>
-            <a href="/">O</a>
+            <a  href="/">
+              <TwitterIcon className="twitter" />
+            </a>
           </li>
           <li>
-            <a href="/">O</a>
+            <a href="/">
+              <InstagramIcon className="instagram" />
+            </a>
           </li>
           <li>
-            <a href="/">O</a>
+            <a href="/">
+              <GitHubIcon className="github" />
+            </a>
           </li>
           <li>
-            <a href="/">O</a>
+            <a href="/">
+              <YouTubeIcon className="youtube" />
+            </a>
           </li>
         </ul>
-
-        <FacebookIcon />
       </section>
     </>
   );
